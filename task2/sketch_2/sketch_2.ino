@@ -15,15 +15,17 @@ void setup() {
 float* DFT(float temps[]){
   float* temps_frequecy = (float*)malloc(20 * sizeof(float));
   float sum_R, sum_I;
+
   for(int k = 0; k < 10; k++){
     sum_R = 0; sum_I = 0;
     for(int n = 0; n < 10; n++){
       sum_R += (float) temps[n] * cos(-2*PI*k*n/10);
       sum_I += (float) temps[n] * sin(-2*PI*k*n/10);
     }
-    temps_frequecy[k] = sum_R;
-    temps_frequecy[10+k] = sum_I;
+    temps_frequecy[k] = (1/10)*sum_R;
+    temps_frequecy[10+k] = (1/10)*sum_I;
   }
+  
   return temps_frequecy;
 }
 
