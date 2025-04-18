@@ -22,8 +22,8 @@ float* DFT(float temps[]){
       sum_R += (float) temps[n] * cos(-2*PI*k*n/10);
       sum_I += (float) temps[n] * sin(-2*PI*k*n/10);
     }
-    temps_frequecy[k] = (1/10)*sum_R;
-    temps_frequecy[10+k] = (1/10)*sum_I;
+    temps_frequecy[k] = sum_R;
+    temps_frequecy[10+k] = sum_I;
   }
   
   return temps_frequecy;
